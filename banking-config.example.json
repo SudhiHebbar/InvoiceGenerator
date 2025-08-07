@@ -1,0 +1,9 @@
+{
+  "defaultBankingInfo": {
+    "beneficiaryAccountNumber": "",
+    "beneficiaryName": "",
+    "beneficiaryBankName": "",
+    "ifscCode": "",
+    "beneficiaryBankAddress": ""
+  }
+}

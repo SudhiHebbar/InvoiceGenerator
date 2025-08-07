@@ -1,0 +1,146 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /**
+   * Tailwind CSS theme
+   * tailwind.config.ts expects the following color variables to be expressed as HSL values.
+   * A different format will require also updating the theme in tailwind.config.ts.
+  */
+  :root {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 220 13% 18%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 220 13% 18%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 253 91% 68%;
+    --primary-foreground: 222.2 84% 4.9%;
+
+    --secondary: 215 28% 17%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 215 28% 17%;
+    --muted-foreground: 217.9 10.6% 64.9%;
+
+    --accent: 253 91% 68%;
+    --accent-foreground: 222.2 84% 4.9%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 215 28% 17%;
+    --input: 215 28% 17%;
+    --ring: 253 91% 68%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 220 13% 18%;
+
+    --sidebar-foreground: 210 40% 98%;
+
+    --sidebar-primary: 253 91% 68%;
+
+    --sidebar-primary-foreground: 222.2 84% 4.9%;
+
+    --sidebar-accent: 215 28% 17%;
+
+    --sidebar-accent-foreground: 210 40% 98%;
+
+    --sidebar-border: 215 28% 17%;
+
+    --sidebar-ring: 253 91% 68%;
+  }
+
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  /* Print styles */
+  @media print {
+    @page {
+      margin: 0.5in;
+      margin-top: 2.5in; /* Extra top margin for letterhead */
+    }
+
+    body {
+      background: white !important;
+      color: black !important;
+      font-size: 12pt;
+      line-height: 1.4;
+    }
+
+    .print-hide {
+      display: none !important;
+    }
+
+    .print-break {
+      page-break-before: always;
+    }
+
+    table {
+      break-inside: avoid;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th, td {
+      border: 1px solid #333 !important;
+      background: white !important;
+      color: black !important;
+      padding: 8px !important;
+      font-size: 11pt;
+    }
+
+    th {
+      background: #f8f9fa !important;
+      font-weight: bold;
+    }
+
+    .bg-card, .bg-background, .bg-muted {
+      background: white !important;
+      color: black !important;
+      border: none !important;
+      box-shadow: none !important;
+    }
+
+    .text-foreground, .text-muted-foreground, .text-primary {
+      color: black !important;
+    }
+
+    button, input, textarea {
+      border: none !important;
+      background: transparent !important;
+      color: black !important;
+      box-shadow: none !important;
+    }
+
+    textarea {
+      resize: none !important;
+      border-bottom: 1px solid #ccc !important;
+      padding: 2px 0 !important;
+      min-height: auto !important;
+    }
+
+    /* Ensure proper spacing for letterhead */
+    #invoice-container {
+      margin-top: 0 !important;
+    }
+
+    main {
+      padding-top: 0 !important;
+      margin-top: 0 !important;
+    }
+  }
+}
